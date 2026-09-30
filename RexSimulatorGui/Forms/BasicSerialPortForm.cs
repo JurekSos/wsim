@@ -431,11 +431,28 @@ namespace RexSimulatorGui.Forms
                 for (int i = 0; i < line.Length; i++)
                 {
                     mSerialPort.Send(line[i]);
+					Console.WriteLine(line[i]);
                 }
                 mSerialPort.Send('\n');
             }
             r.Close();
         }
+
+		/// <summary>
+		/// Inputs a load command into the serial port and then loads the files
+		/// </summary>
+		private void UploadSrec(object parameter)
+		{
+			//TODO
+			string line = "load\n";
+			for (int i = 0; i < line.Length; i++)
+			{
+				mSerialPort.Send(line[i]);
+			}
+			//Wait for load command to be processed before uploading the file
+			Thread.Sleep(10);
+			UploadFileWorker(parameter);
+		}
         #endregion
 
         #region Public Methods
@@ -455,6 +472,29 @@ namespace RexSimulatorGui.Forms
         {
             quacker = _quacker;
         }
+
+		/// <summary>
+		/// Uploads a .srec file to load onto the board.
+		/// If the file type is not srec, then a message will be output to the serial port instead
+		/// </summary>
+        /// <param name="fileName">The file to upload, must be .srec</param>
+		/// <returns>A boolean representing whether the upload was successfully started</returns>
+		public bool UploadProgram(string fileName)
+		{
+			//TODO - check instruction count to know when wrampmon is ready to receive input, then do stuff - should then work for slower PC
+			//Check correct file type
+			if(fileName.EndsWith(".srec"))
+			{
+				//Load the file
+                mUploadFileWorker = new Thread(new ParameterizedThreadStart(UploadSrec));
+                mUploadFileWorker.Start(fileName);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
         #endregion
     }
 }

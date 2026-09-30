@@ -32,11 +32,21 @@ namespace RexSimulatorGui
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RexSimulatorGui.Forms.RexBoardForm());
+			if(args.Length > 1)
+			{
+
+			}
+			else
+			{
+				Application.EnableVisualStyles();
+				Application.SetCompatibleTextRenderingDefault(false);
+				if(args.Length == 0)
+					Application.Run(new RexSimulatorGui.Forms.RexBoardForm());
+				else
+					Application.Run(new RexSimulatorGui.Forms.RexBoardForm(args[0]));
+			}
         }
     }
 }
