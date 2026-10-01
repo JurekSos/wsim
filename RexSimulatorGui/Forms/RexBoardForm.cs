@@ -140,17 +140,10 @@ namespace RexSimulatorGui.Forms
 
 		public RexBoardForm(string fileName) : this()
 		{
-			//TODO
-			// mSerialForm1.Load += new EventHandler(SerialForm1_Load);
-			// mSerialForm1.Load += delegate(object sender, EventArgs e)
-			// {
-			// 	SerialForm1_Load(sender, e, fileName);	
-			// };
-			//Load the program
-            // Stream program = new MemoryStream(File.ReadAllBytes(fileName));
-			// rexWidget1.LoadSrec(program);
-			
-			//Plane - run enough clock cycles to overwrite memory - load srec into memory - write single wrampMon line into memory to continue execution after that
+			mSerialForm1.Load += delegate(object sender, EventArgs e)
+			{
+				SerialForm1_Load(sender, e, fileName);	
+			};
 		}
         #endregion
 
@@ -268,16 +261,15 @@ namespace RexSimulatorGui.Forms
 		/// <param name="fileName"></param>
 		private void SerialForm1_Load(object sender, EventArgs e, string fileName)
 		{
-			// new Thread(
-			// 	() => 
-			// 	{
-			// 		//Wait for form to finish loading and be ready for input
-			// 		Thread.Sleep(500); //BAD - DOESNT ACCOUNT FOR SLOW LOAD - NEEDS FIXING
-			// 		//Upload the file
-			// 		mSerialForm1.UploadProgram(fileName);
-			// 	}).Start();
-			mSerialForm1.UploadProgram(fileName);
-
+			//TODO - review
+			new Thread(
+				() => 
+				{
+					//Wait for form to finish loading and be ready for input
+					Thread.Sleep(500); //BAD - DOESNT ACCOUNT FOR SLOW LOAD - NEEDS FIXING
+					//Upload the file
+					mSerialForm1.UploadProgram(fileName);
+				}).Start();
 		}
 
         private void RexBoardForm_Load(object sender, EventArgs e)

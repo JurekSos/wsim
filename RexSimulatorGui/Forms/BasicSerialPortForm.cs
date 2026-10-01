@@ -450,7 +450,7 @@ namespace RexSimulatorGui.Forms
 				mSerialPort.Send(line[i]);
 			}
 			//Wait for load command to be processed before uploading the file
-			Thread.Sleep(10);
+			Thread.Sleep(10); //Don't like the sleep here - maybe replace with instruction count check to deal with variable execution speed
 			UploadFileWorker(parameter);
 		}
         #endregion
@@ -481,7 +481,6 @@ namespace RexSimulatorGui.Forms
 		/// <returns>A boolean representing whether the upload was successfully started</returns>
 		public bool UploadProgram(string fileName)
 		{
-			//TODO - check instruction count to know when wrampmon is ready to receive input, then do stuff - should then work for slower PC
 			//Check correct file type
 			if(fileName.EndsWith(".srec"))
 			{
