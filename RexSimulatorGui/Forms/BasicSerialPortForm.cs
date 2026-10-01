@@ -490,6 +490,7 @@ namespace RexSimulatorGui.Forms
 			}
 			else
 			{
+				//TODO - output message to serial port
 				return false;
 			}
 		}
