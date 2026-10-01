@@ -431,7 +431,6 @@ namespace RexSimulatorGui.Forms
                 for (int i = 0; i < line.Length; i++)
                 {
                     mSerialPort.Send(line[i]);
-					Console.WriteLine(line[i]);
                 }
                 mSerialPort.Send('\n');
             }
