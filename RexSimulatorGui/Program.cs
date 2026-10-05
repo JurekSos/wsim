@@ -36,7 +36,7 @@ namespace RexSimulatorGui
         {
 			if(args.Length > 1)
 			{
-
+				Console.WriteLine("Usage: " + System.AppDomain.CurrentDomain.FriendlyName + " [srec file]");
 			}
 			else
 			{
