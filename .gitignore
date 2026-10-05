@@ -374,4 +374,7 @@ tags
 # Persistent undo
 [._]*.un~
 
+#Makefile
+Makefile
+
 # End of https://www.gitignore.io/api/vim,linux,csharp
