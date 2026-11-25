@@ -132,6 +132,7 @@ namespace RexSimulatorGui.Forms
             foreach (Form f in mSubforms)
             {
                 f.VisibleChanged += new EventHandler(SubForm_VisibleChanged);
+                f.MdiParent = this.MdiParent;
             }
 
             //Set the GUI update timer going!

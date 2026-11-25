@@ -19,7 +19,7 @@ namespace RexSimulatorGui.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -70,12 +70,12 @@ namespace RexSimulatorGui.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to S32D00080000310EFFFF111DFFFF020100009120000012210001C301FFFF23380002A03FFFFBCE01FF801EE300042E
-        ///S32D0008000A600803EE600802EB600802D8600803F560080161600805EE60080C7160080CD11EE300019FE00000A0
+        ///   Looks up a localized string similar to S32D00080000310EFFFF111DFFFF020100009120000012210001C3003FFF23380002A03FFFFBCE003E981EE3000499
+        ///S32D0008000A60080406600802E66008040D600803DF600801676008060660080CE860080D4E1EE300019FE0000057
         ///S32D0008001481E00001701000008FE000001EE1000150F0000081070003111B0001A01FFFFD81070001111B00FFFE
-        ///S32D0008001E50F0000081070003111B0002A01FFFFD81E000009107000050F000001EE3000394E0000095E00001D1
-        ///S32D0008002896E0000284E0000385E0000401410000144300011441000186400000B06FFFFD86500000155100014C
-        ///S32D000800329640000014410001B06FFFFB8 [rest of string was truncated]&quot;;.
+        ///S32D0008001E50F0000081070003111B0002A01FFFFD81E000009107000050F0000081071003111B0002A01FFFFD3B
+        ///S32D0008002881E000009107100050F000001EE3000394E0000095E0000196E0000284E0000385E0000401410000E1
+        ///S32D0008003214430001144100018640 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string monitor_srec {
             get {
