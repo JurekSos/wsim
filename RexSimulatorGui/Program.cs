@@ -42,7 +42,10 @@ namespace RexSimulatorGui
 			{
 				Application.EnableVisualStyles();
 				Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new RexSimulatorGui.Forms.ContainerForm(args));
+				if(args.Length == 0)
+					Application.Run(new RexSimulatorGui.Forms.RexBoardForm());
+				else
+					Application.Run(new RexSimulatorGui.Forms.RexBoardForm(args[0]));
 			}
         }
     }
